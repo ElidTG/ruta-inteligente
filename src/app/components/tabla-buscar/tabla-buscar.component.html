@@ -1,0 +1,36 @@
+<body>
+    <!--<nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="login.html">Login</a></li>
+             Agrega más elementos del menú según sea necesario
+        </ul>
+    </nav>-->
+    <div class="container">
+        <h1>Buscar Registro</h1>
+        <form id="formModificar">
+            <label for="rpuModificar">RPU del Registro:</label>
+            <input type="text" id="rpuModificar" required>
+            <!-- Agrega los campos que deseas modificar aquí -->
+            <!-- Por ejemplo:
+            <label for="nuevoNumeroMedidor">Nuevo Numero Medidor:</label>
+            <input type="text" id="nuevoNumeroMedidor" required>
+            -->
+            <button type="submit">Buscar</button>
+        </form>
+        <h2>Registro Encontrado</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Numero Medidor</th>
+                    <th>RPU</th>
+                    <th>Folio</th>
+                </tr>
+            </thead>
+            <tbody id="registroModificadoBody">
+                <!-- Aquí se mostrará el registro modificado -->
+            </tbody>
+        </table>
+    </div>
+</body>
+

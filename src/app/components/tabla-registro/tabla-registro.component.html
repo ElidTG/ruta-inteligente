@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+    <link rel="stylesheet" href="tabla-registro.component.css">
+    <!--<script src="addregistro.js"></script>
+    <script src="getregistro.js"></script> 
+     <meta http-equiv="Content-Security-Policy" content= "default-src example.com:*; font-src 'self' data:; img-src 'self' data:; default-src 'self' http://localhost:3000/"> 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: http://localhost:3000/;"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:3000;">
+</head>
+<body>
+   <!-- <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="login.html">Login</a></li>
+          Agrega más elementos del menú según sea necesario 
+        </ul>
+      </nav> -->
+    <div class="container">
+        <h1>RUTA: {{Ruta}}</h1>
+        <form (submit)="agregarRegistro()">
+            <label for="numeromedidor">Numero Medidor:</label>
+            <input type="text" id="numeromedidor" name="numeromedidor" required [(ngModel)]="registro.NumeroM">
+            <label for="codigomedidor">Código de medidor:</label>
+            <input type="text" id="codigomedidor" name="codigomedidor" required [(ngModel)]="registro.CodigoM">
+            <label for="codigolote">Código de lote:</label>
+            <input type="text" id="codigolote" name="codigolote" required [(ngModel)]="registro.CodigoLote">
+            <label for="tarifa">Tarifa:</label>
+            <input type="text" id="tarifa" name="tarifa" required [(ngModel)]="registro.Tarifa">
+            <label for="hilos">Fases/Hilos:</label>
+            <input type="text" id="hilos" name="hilos" required [(ngModel)]="registro.Hilos">
+            <label for="rpu">RPU:</label>
+            <input type="text" id="rpu" name="rpu" required [(ngModel)]="registro.Rpu">
+            <label for="folio">Folio:</label>
+            <input type="text" id="folio" name="folio" required [(ngModel)]="registro.Folio"> <!--&nbsp;&nbsp;&nbsp;  -->
+            <label for="rpu">Kh Medidor:</label>
+            <input type="text" id="khmedidor" name="khmedidor" required [(ngModel)]="registro.KhM">
+            <label for="rpu">Rr Medidor:</label>
+            <input type="text" id="rrmedidor" name="rrmedidor" required [(ngModel)]="registro.RrM">
+            <button align = "center" type="submit">Añadir</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Numero Medidor</th>
+                    <th>Códogo de Medidor</th>
+                    <th>Código de Lote</th>
+                    <th>Tarifa</th>
+                    <th>Hilos</th>
+                    <th>RPU</th>
+                    <th>Folio</th>
+                    <th>khM</th>
+                    <th>RrM</th>
+                </tr>
+            </thead>
+                <tbody id="tableBody">
+                    <tr *ngFor="let registro of registros">
+                        <td>{{registro.NumeroM }}</td>
+                        <td>{{registro.CodigoM }}</td>
+                        <td>{{registro.CodigoLote}}</td>
+                        <td>{{registro.Tarifa}}</td>
+                        <td>{{registro.Hilos}}</td>
+                        <td>{{registro.Rpu}}</td>
+                        <td>{{registro.Folio }}</td>
+                        <td>{{registro.KhM}}</td>
+                        <td>{{registro.RrM}}</td>
+                    </tr>
+                </tbody>
+            
+        </table>
+    </div>
+</body>
+</html>
+
+
