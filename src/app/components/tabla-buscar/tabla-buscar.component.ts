@@ -25,6 +25,7 @@ export class TablaBuscarComponent {
       catchError((error) => {
         // Manejo de errores
         console.error('Error al buscar registro:', error);
+        alertaFALSE('Registro NO encotrado')
         return [];
       })
     )
@@ -59,3 +60,17 @@ function alertaOk (message : string){
   timer : 1500
   });
   }
+  function alertaFALSE (message : string){
+    Swal.fire({
+    text: message,
+    width : 'auto',
+    icon : 'error',
+    iconColor : '#090c9b',
+    background : 'white',
+    padding : '0px 0px 20px 0px',
+    color : 'black',
+    buttonsStyling : false,
+    showConfirmButton : false,
+    timer : 1500
+    });
+    }
