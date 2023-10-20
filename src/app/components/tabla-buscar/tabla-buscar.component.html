@@ -23,16 +23,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let registro of registroEncontrado">
-                    <td>{{registro.NumeroM }}</td>
-                    <td>{{registro.CodigoM }}</td>
-                    <td>{{registro.CodigoLote}}</td>
-                    <td>{{registro.Tarifa}}</td>
-                    <td>{{registro.Hilos}}</td>
-                    <td>{{registro.Rpu}}</td>
-                    <td>{{registro.Folio }}</td>
-                    <td>{{registro.KhM}}</td>
-                    <td>{{registro.RrM}}</td>
+                <tr *ngIf="registroEncontrado">
+                    <td>{{registroEncontrado.NumeroM }}</td>
+                    <td>{{registroEncontrado.CodigoM }}</td>
+                    <td>{{registroEncontrado.CodigoLote}}</td>
+                    <td>{{registroEncontrado.Tarifa}}</td>
+                    <td>{{registroEncontrado.Hilos}}</td>
+                    <td>{{registroEncontrado.Rpu}}</td>
+                    <td>{{registroEncontrado.Folio }}</td>
+                    <td>{{registroEncontrado.KhM}}</td>
+                    <td>{{registroEncontrado.RrM}}</td>
                 </tr>
             </tbody>
         </table>
