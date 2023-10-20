@@ -32,7 +32,6 @@ export class TablaBuscarComponent {
     .subscribe((data: any) => {
       if (data.ok) {
         this.registroEncontrado = data.registro;
-        alertaOk(this.registroEncontrado);
         console.log(this.registroEncontrado);
       }
     });
