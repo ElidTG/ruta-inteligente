@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class TablaService {
 
-  private api = 'http://localhost:3000'; 
+  private api = 'https://ruta-inteligente-logica.onrender.com'; 
 
   constructor(private http: HttpClient) { }
   //Agregar un nuevo registro

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LogginService {
-  private api = 'http://localhost:3000'; 
+  private api = 'https://ruta-inteligente-logica.onrender.com'; 
 
   constructor(private http: HttpClient) { }
 
