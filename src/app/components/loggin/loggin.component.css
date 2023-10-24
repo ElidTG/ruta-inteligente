@@ -1,136 +1,211 @@
-
-body {
-    font-family: 'Overpass', sans-serif;
-    font-weight: normal;
-    font-size: 100%;
-    color: #1f2c1b;
-    margin: 0;
-    background-image:linear-gradient(to bottom,
-    rgba(255, 255, 0, 0.5),
-    rgba(0, 0, 255, 0.5)), 
-    url("../../../assets/images/CFE_logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
+/* Estilos personalizados para tu formulario de inicio de sesión */
 #contenedor {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    margin: 0;
-    padding: 0;
-    min-width: 100vw;
     min-height: 100vh;
-    width: 100%;
-    height: 100%;
-}
-
-#central {
+    background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  }
+  
+  #central {
     max-width: 320px;
     width: 100%;
-}
-
-.titulo {
+    background-color: #35930d;
+    padding: 50px 30px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+  }
+  
+  .titulo {
     font-size: 250%;
-    color:#bbe1fa;
+    color: #bbe1fa;
     text-align: center;
     margin-bottom: 20px;
-}
-
-#login {
-    width: 100%;
-    padding: 50px 30px;
-    background-color: #35930d;
-    
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
-    box-sizing: border-box;
-}
-
-#login input {
-    font-family: 'Overpass', sans-serif;
-    font-size: 110%;
-    color: #1b262c;
-    
-    display: block;
-    width: 100%;
-    height: 40px;
-    
+  }
+  
+  /* Estilos para dispositivos pequeños (menos de 576px) */
+  @media (min-width: 250px) and (max-width: 400px){
+    body{min-height: auto; padding: 40px 0;}
+    section{width: 90%;}
+    aside{display: none;}
+    form{width: 100%; padding: 0 10px;}
+    form h3{font-size: 16px; margin: 28px 0;}
+    form > p{font-size: 14px; margin-bottom: 28px;}
+    form .data-field{margin-bottom: 28px; width: 100%;}
+    form .data-field nav{margin-bottom: 28px; width: 90%;}
+    form .data-field nav p{font-size: 14px;}
+    form .data-field input{width: 90%; font-size: 14px; border-radius: 5px; padding: 0 5px;}
+    form button{
+        font-size: 14px;
+        width: 50%;
+        margin-bottom: 28px;
+        border-radius: 5px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    #contenedor {
+      padding: 40px 0;
+    }
+  
+    #central {
+      padding: 10px;
+    }
+  
+    .titulo {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    #login input, #login button {
+      font-size: 16px;
+    }
+  }
+  
+  /* Estilos para dispositivos medianos (entre 576px y 767.98px) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    #contenedor {
+      padding: 40px 0;
+    }
+  
+    #central {
+      padding: 10px;
+    }
+  
+    .titulo {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    #login input, #login button {
+      font-size: 18px;
+    }
+  }
+  
+  /* Estilos para dispositivos grandes (entre 768px y 991.98px) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    #contenedor {
+      padding: 40px 0;
+    }
+  
+    #central {
+      padding: 10px;
+    }
+  
+    .titulo {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  
+    #login input, #login button {
+      font-size: 20px;
+    }
+  }
+  
+  /* Estilos para dispositivos extra grandes (más de 992px) */
+  @media (min-width: 992px) {
+    #contenedor {
+      padding: 40px 0;
+    }
+  
+    #central {
+      padding: 10px;
+    }
+  
+    .titulo {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+  
+    #login input, #login button {
+      font-size: 22px;
+    }
+  }
+  
+  
+  /* Otros estilos para diferentes tamaños de pantalla si es necesario */
+  /* Define aquí tus estilos adicionales según tus necesidades */
+  /* Estilos para los iconos */
+  .input-icon {
+    position: absolute;
+    font-size: 18px; /* Tamaño de fuente de los íconos */
+    left: 15px; /* Espacio desde el borde izquierdo */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%);
+    color: #1b262c; /* Color de los íconos */
+  }
+  
+  /* Estilos para los campos de entrada */
+  .input-container {
+    position: relative;
     margin-bottom: 10px;
-    padding: 5px 5px 5px 10px;
-    
-    box-sizing: border-box;
-    
-    border: none;
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-}
-
-#login input::placeholder {
-    font-family: 'Overpass', sans-serif;
-    color: #E4E4E4;
-}
-
-#login button {
-    font-family: 'Overpass', sans-serif;
-    font-size: 110%;
-    color:#1b262c;
+  }
+  
+  .input-container input {
+    font-family: 'Font Elegante', sans-serif; /* Cambia 'Font Elegante' por la fuente que desees */
+    font-size: 16px; /* Tamaño de fuente de los campos de entrada */
+    padding-left: 30px; /* Espacio para el ícono */
     width: 100%;
     height: 40px;
     border: none;
-    
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
+    border-radius: 3px;
     background-color: #c2fabb;
-    
-    margin-top: 10px;
-}
-
-#login button:hover {
-    background-color: #14750f;
-    color:#c5fabb;
-}
-
-.pie-form {
-    font-size: 90%;
-    text-align: center;    
-    margin-top: 15px;
-}
-
-.pie-form a {
-    display: block;
-    text-decoration: none;
-    color: #c4fabb;
-    margin-bottom: 3px;
-}
-
-.pie-form a:hover {
-    color: #28750f;
-}
-
-.inferior {
-    margin-top: 10px;
-    font-size: 90%;
-    text-align: center;
-}
-
-.inferior a {
-    display: block;
-    text-decoration: none;
-    color: #cffabb;
-    margin-bottom: 3px;
-}
-
-.inferior a:hover {
-    color: #32b83f;
-}
+  }
+  
+  /* Otros estilos (de tu ejemplo anterior) */
+  /* ... */
+  /* Estilos para el botón de inicio de sesión */
+  .btn-login {
+    font-size: 16px;
+    border-radius: 3px;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .input-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .input-container input {
+    font-family: 'Font Elegante', sans-serif;
+    font-size: 16px;
+    padding-left: 30px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: #c2fabb;
+  }
+  
+  /* Estilos para centrar el contenedor de inicio de sesión */
+  #contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  }
+  
+  #central {
+    max-width: 320px;
+    width: 100%;
+    padding: 20px;
+    background-color: #35930d;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+  }
+  
+  /* Responsividad para los campos de entrada */
+  @media (max-width: 767px) {
+    .input-container input {
+      font-size: 14px;
+    }
+  }
+  
+  /* Responsividad para el botón de inicio de sesión */
+  @media (max-width: 767px) {
+    .btn-login {
+      font-size: 14px;
+    }
+  }
+  

@@ -11,18 +11,34 @@
 <body>
     <div class="container">
         <h1>Exportar Registros a Excel</h1>
-        <button id="exportarBtn">Exportar a Excel</button>
-        <table>
+    <button (click)="exportExcel()" class = "btn btn-primary">Descargar</button>
+        <table class="table table-striped" id="table-data">
             <thead>
                 <tr>
                     <th>Numero Medidor</th>
+                    <th>Códogo de Medidor</th>
+                    <th>Código de Lote</th>
+                    <th>Tarifa</th>
+                    <th>Hilos</th>
                     <th>RPU</th>
                     <th>Folio</th>
+                    <th>khM</th>
+                    <th>RrM</th>
                 </tr>
             </thead>
-            <tbody id="registrosBody">
-                <!-- Aquí se mostrarán los registros -->
-            </tbody>
+            <tbody id="tableBody">
+            <tr *ngFor="let registro of registros">
+                <td>{{registro.NumeroM }}</td>
+                <td>{{registro.CodigoM }}</td>
+                <td>{{registro.CodigoLote}}</td>
+                <td>{{registro.Tarifa}}</td>
+                <td>{{registro.Hilos}}</td>
+                <td>{{registro.Rpu}}</td>
+                <td>{{registro.Folio }}</td>
+                <td>{{registro.KhM}}</td>
+                <td>{{registro.RrM}}</td>
+            </tr>
+        </tbody>
         </table>
     </div>
 </body>
