@@ -1,7 +1,7 @@
 /* Estilo base para la barra de menú */
 img{
-  width: 32px;
-  height: 32px;
+  width: 25px;
+  height: 25px;
   margin-left:5px;
 }
 nav{
@@ -9,7 +9,7 @@ nav{
   align-items: center;
 }
 nav img{
-  width: 60px;
+  width: 40px;
   margin: 0 10px;
   fill: white;
 }
@@ -83,7 +83,7 @@ ul li:hover{
 }
 
 @media (min-width: 250px) and (max-width: 400px){
-    nav h1{font-size: 20px;}
+    nav h1{font-size: 25px;}
     nav img{width: 32px; height: 32px; margin: 0 5px;}
     ul li {padding: 0 5px;}
     ul li img{width: 24px; height: 24px; margin: 0;}
@@ -91,7 +91,7 @@ ul li:hover{
 }
 
 @media (min-width: 400px) and (max-width: 600px){
-    nav h1{font-size: 22.5px;}
+    nav h1{font-size: 25px;}
     ul li img{width: 28px; height: 28px; margin: 0;}
     ul li a{display: none;}
 }
