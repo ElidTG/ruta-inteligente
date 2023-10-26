@@ -49,7 +49,21 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  display: flex;
+}
+
+td, th {
+  border: 1px solid #000; /* Opcional: agrega bordes a las celdas */
+  padding: 8px; /* Opcional: ajusta el espaciado interior de las celdas */
+  text-align: left; /* Opcional: alineación del texto en las celdas */
+}
+
+tr {
+  display: block; /* Cambia el diseño de las filas a columnas */
+}
+
+/* Opcional: Establece el ancho de las celdas si es necesario */
+td, th {
+  width: 100%; /* O ajusta el ancho deseado */
 }
 
 table, th, td {
