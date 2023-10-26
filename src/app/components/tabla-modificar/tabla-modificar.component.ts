@@ -84,6 +84,7 @@ export class TablaModificarComponent implements OnInit {
       if (response.ok) {
         alertaOk('Registro actualizado con éxito.');
         this.buscarRegistro(this.rpubuscar);
+        console.log('Registro actualizado', this.rpubuscar)
         this.mostrarTabla = true;
       }else{
         alertaFALSE('Registro No encontrado')
