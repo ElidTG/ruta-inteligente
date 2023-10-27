@@ -44,7 +44,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Numero Medidor</th>
+                    <th class = "filacolumna">Numero Medidor</th>
                     <th>Códogo de Medidor</th>
                     <th>Código de Lote</th>
                     <th>Tarifa</th>
@@ -57,7 +57,7 @@
             </thead>
                 <tbody id="tableBody">
                     <tr *ngFor="let registro of registros">
-                        <td>{{registro.NumeroM }}</td>
+                        <td class = "filacolumna">{{registro.NumeroM }}</td>
                         <td>{{registro.CodigoM }}</td>
                         <td>{{registro.CodigoLote}}</td>
                         <td>{{registro.Tarifa}}</td>
