@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 token = localStorage.getItem('loggin');
 
 //manejar el estado del menu
-menu = false
+menu = true
 
 ngOnInit(): void {
   //Debe de buscar el valor en el localStorage
