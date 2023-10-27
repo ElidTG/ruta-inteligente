@@ -14,12 +14,12 @@ token = localStorage.getItem('loggin');
 //manejar el estado del menu
 menu = false
 
-ngOnInit() {
+ngOnInit(): void {
   //Debe de buscar el valor en el localStorage
   if ((this.token === null || this.token === undefined))
   {
     console.log("Error al iniciar sesion")
-    
+
   }
   else{
     this.menu = true
