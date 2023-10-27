@@ -44,28 +44,28 @@
         <table>
             <thead>
                 <tr>
-                    <th class = "filacolumna">Numero Medidor</th>
-                    <th>Códogo de Medidor</th>
-                    <th>Código de Lote</th>
-                    <th>Tarifa</th>
-                    <th>Hilos</th>
+                    <th >Numero Medidor</th>
+                    <th>Código de Medidor</th>
+                    <th class = "filacolumna">Código de Lote</th>
+                    <th class = "filacolumna">Tarifa</th>
+                    <th class = "filacolumna">Hilos</th>
                     <th>RPU</th>
                     <th>Folio</th>
-                    <th>khM</th>
-                    <th>RrM</th>
+                    <th class = "filacolumna">khM</th>
+                    <th class = "filacolumna">RrM</th>
                 </tr>
             </thead>
                 <tbody id="tableBody">
                     <tr *ngFor="let registro of registros">
-                        <td class = "filacolumna">{{registro.NumeroM }}</td>
+                        <td >{{registro.NumeroM }}</td>
                         <td>{{registro.CodigoM }}</td>
-                        <td>{{registro.CodigoLote}}</td>
-                        <td>{{registro.Tarifa}}</td>
-                        <td>{{registro.Hilos}}</td>
+                        <td class = "filacolumna">{{registro.CodigoLote}}</td>
+                        <td class = "filacolumna">{{registro.Tarifa}}</td>
+                        <td class = "filacolumna">{{registro.Hilos}}</td>
                         <td>{{registro.Rpu}}</td>
                         <td>{{registro.Folio }}</td>
-                        <td>{{registro.KhM}}</td>
-                        <td>{{registro.RrM}}</td>
+                        <td class = "filacolumna">{{registro.KhM}}</td>
+                        <td class = "filacolumna">{{registro.RrM}}</td>
                     </tr>
                 </tbody>
             

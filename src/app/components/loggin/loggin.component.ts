@@ -29,6 +29,7 @@ login() {
             // Aquí puedes manejar la respuesta del servidor
             console.log('Respuesta del servidor:', data);
             localStorage.setItem("Ruta", data.Ruta);
+            localStorage.setItem('loggin', 'logeado');
             Swal.fire('Inicio de sesión', 'Inicio de sesión exitoso', 'success');
             // Redirige o realiza otras acciones según la respuesta
             setTimeout(() => {
@@ -45,6 +46,7 @@ login() {
     );
 
 }
+  
 }
 
 function alertaOk (message : string){
