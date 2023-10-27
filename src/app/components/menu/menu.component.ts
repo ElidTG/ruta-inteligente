@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   // Manejar el estado del menú
   menu: boolean = false;
+  constructor(private router: Router){}
 
   ngOnInit(): void {
     // Buscar el valor en el localStorage
@@ -22,5 +24,6 @@ export class MenuComponent implements OnInit {
     localStorage.removeItem('Ruta');
     localStorage.removeItem('loggin');
     this.menu = false; // Oculta el menú al cerrar la sesión
+    this.router.navigate(['/iniciosesion']); // Redirige al usuario a la página de inicio de sesión
   }
 }
