@@ -1,5 +1,3 @@
-// menu.component.ts
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,25 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-//guardar si se ve 
-token = localStorage.getItem('loggin');
+  // Manejar el estado del menú
+  menu: boolean = false;
 
-//manejar el estado del menu
-menu = true
+  ngOnInit(): void {
+    // Buscar el valor en el localStorage
+    const isLoggedIn = localStorage.getItem('loggin') === 'logeado';
 
-ngOnInit(): void {
-  //Debe de buscar el valor en el localStorage
-  if ((this.token === null || this.token === undefined))
-  {
-    console.log("Error al iniciar sesion")
-
+    if (isLoggedIn) {
+      this.menu = true;
+    }
   }
-  else{
-    this.menu = true
+
+  cerrarSesion() {
+    localStorage.removeItem('Ruta');
+    localStorage.removeItem('loggin');
+    this.menu = false; // Oculta el menú al cerrar la sesión
   }
-}
-cerrarSesion(){
-  localStorage.removeItem('Ruta');
-  localStorage.removeItem('loggin');
-}
 }
