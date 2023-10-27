@@ -18,7 +18,7 @@ export class TablaService {
   }
   // Obtener todos los registros
   obtenerRegistros(): Observable<any> {
-    return this.http.get(`${this.api}/gettabla`).pipe(
+    return this.http.get(`${this.api}/buscartabla`).pipe(
       catchError(this.handleError)
     );
   }
