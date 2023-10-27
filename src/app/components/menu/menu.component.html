@@ -1,9 +1,15 @@
 <nav>
-    <img src="../../../../assets/images/iconoCfe.png" alt="Icono CFE">
-    <ul>
-      <li><a routerLink="/registro">Registro</a></li>
-      <li><a routerLink="/buscar">Buscar</a></li>
-      <li><a routerLink="/modificar">Modificar</a></li>
-      <li><a routerLink="/exportar">Exportar</a></li>
-    </ul>
-  </nav>
+  <img src="../../../../assets/images/iconoCfe.png" alt="Icono CFE">
+  <ul>
+    <li><a routerLink="/registro">Registro</a></li>
+    <li><a routerLink="/buscar">Buscar</a></li>
+    <li><a routerLink="/modificar">Modificar</a></li>
+    <li><a routerLink="/exportar">Exportar</a></li>
+    <li *ngIf="estaAutenticado()">
+      <a (click)="cerrarSesion()">Cerrar Sesión</a>
+    </li>
+    <li *ngIf="!estaAutenticado()">
+      <a (click)="iniciarSesion()">Iniciar Sesión</a>
+    </li>
+  </ul>
+</nav>

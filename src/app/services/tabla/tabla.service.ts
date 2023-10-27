@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class TablaService {
 
-  private api = 'https://ruta-inteligente-logica.onrender.com'; 
+  private api ='https://ruta-inteligente-logica.onrender.com'; 
 
   constructor(private http: HttpClient) { }
   //Agregar un nuevo registro
@@ -31,8 +31,8 @@ export class TablaService {
   }
 
   // Actualizar un registro por ID
-  actualizarRegistro(id: string, registro: any): Observable<any> {
-    return this.http.put(`${this.api}/actualizartabla/${id}`, registro).pipe(
+  actualizarRegistro(rpu: string, registro: any): Observable<any> {
+    return this.http.post(`${this.api}/actualizartabla/${rpu}`, registro).pipe(
       catchError(this.handleError)
     );
   }
