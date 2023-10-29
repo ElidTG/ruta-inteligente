@@ -1,22 +1,22 @@
 <nav>
-  <img src="../../../../assets/images/iconoCfe.png" alt="Icono CFE">
+  <img src="../../../../assets/images/iconoCfe.png" alt="CFE">
   <ul *ngIf = "menu" >
     <li>    <a routerLink="/registro">
       <img src="../../../../assets/images/registro.png" alt="Registro">
     </a>
     </li>
     <li>    <a routerLink="/buscar">
-      <img src="../../../../assets/images/search.png" alt="Registro">
+      <img src="../../../../assets/images/search.png" alt="Buscar">
     </a>
 </li>
     <li>    <a routerLink="/modificar">
-      <img src="../../../../assets/images/modificar.png" alt="Registro">
+      <img src="../../../../assets/images/modificar.png" alt="Modificar">
     </a>
 </li>
     <li>    <a routerLink="/exportar">
-      <img src="../../../../assets/images/exportar.png" alt="Registro">
-    Exportar</a>
+      <img src="../../../../assets/images/exportar.png" alt="Exportar">
+    </a>
 </li>
-    <li (click)="cerrarSesion()"><a routerLink="/iniciosesion">salir</a></li>
+    <li (click)="cerrarSesion()"><a routerLink="/iniciosesion"><img src="../../../../assets/images/loggin.png" alt="Salir"></a></li>
   </ul>
 </nav>
