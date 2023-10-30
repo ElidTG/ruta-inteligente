@@ -41,10 +41,13 @@ th, td {
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
-.filacolumna{
-    display: none;
-    
-}
+
 .codigoM{
     width: 10%;
 }
+@media (min-width: 300px) and (max-width: 600px) {
+    .filacolumna{
+        display: none;
+        
+    }
+  }

@@ -45,41 +45,45 @@ h2 {
   margin-top: 30px;
   margin-bottom: 10px;
 }
+.contenedor{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 
-table {
+.propiedad{
   width: 100%;
-  border-collapse: collapse;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 2px solid rgba(51,150,60);
+}
+.propiedad h6{
+  width:100%;
+  font-size:20px;
+  background-color: rgb(51, 136, 57);
+  color: whitesmoke;
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
 }
 
-td, th {
-  border: 1px solid #000; /* Opcional: agrega bordes a las celdas */
-  padding: 8px; /* Opcional: ajusta el espaciado interior de las celdas */
-  text-align: left; /* Opcional: alineación del texto en las celdas */
+.propiedad p{
+  margin-top: 10px ;
+  font-size: 18px;
+  text-align: center;
 }
 
-tr {
-  display: block; /* Cambia el diseño de las filas a columnas */
-}
-
-/* Opcional: Establece el ancho de las celdas si es necesario */
-td, th {
-  width: 100%; /* O ajusta el ancho deseado */
-}
-
-table, th, td {
-  border: 1px solid #ddd;
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-/* Estilos para la fila del registro modificado */
-tr.registro-modificado {
-  background-color: #e6ffe6; /* Color de fondo para la fila modificada */
+/* Estilos para la tabla en la vista vertical */
+@media (min-width: 300px) and (max-width: 600px) {
+  .propiedad p{
+    font-size: 14px;
+  }
+  .propiedad h6{
+    font-size:16px;
+  }
 }
