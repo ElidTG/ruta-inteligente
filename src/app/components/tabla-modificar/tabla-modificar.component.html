@@ -1,10 +1,21 @@
 <body>
+    <!--<nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="login.html">Login</a></li>
+             Agrega más elementos del menú según sea necesario
+        </ul>
+    </nav>-->
     <div class="container">
-        <h1>Modificar Registro en Ruta: {{Ruta}}</h1>
-        
+        <h1>Modificar Registro</h1>
         <form id="formModificar">
             <label for="rpuModificar">RPU del Registro a Modificar:</label>
             <input type="text" name = "rpuModificar" id="rpuModificar" required [(ngModel)] = "rpubuscar">
+            <!-- Agrega los campos que deseas modificar aquí -->
+            <!-- Por ejemplo:
+            <label for="nuevoNumeroMedidor">Nuevo Numero Medidor:</label>
+            <input type="text" id="nuevoNumeroMedidor" required>
+            -->
             <button type="submit" (click)="buscarRegistro(rpubuscar)">Buscar</button>
         </form>
         <form (submit)="guardarCambios()">
@@ -29,36 +40,43 @@
             <button type="submit">Guardar Cambios</button> 
           </form>
         <h2>Registro Modificado</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Numero Medidor</th>
-                    <th>Códogo de Medidor</th>
-                    <th>Código de Lote</th>
-                    <th>Tarifa</th>
-                    <th>Hilos</th>
-                    <th>RPU</th>
-                    <th>Folio</th>
-                    <th>khM</th>
-                    <th>RrM</th>
-                </tr>
-            </thead>
-            <tbody id="registroModificadoBody">
-                <tr *ngIf= "mostrarTabla">
-                    <td>{{registroEncontrado.NumeroM }}</td>
-                    <td>{{registroEncontrado.CodigoM }}</td>
-                    <td>{{registroEncontrado.CodigoLote}}</td>
-                    <td>{{registroEncontrado.Tarifa}}</td>
-                    <td>{{registroEncontrado.Hilos}}</td>
-                    <td>{{registroEncontrado.Rpu}}</td>
-                    <td>{{registroEncontrado.Folio }}</td>
-                    <td>{{registroEncontrado.KhM}}</td>
-                    <td>{{registroEncontrado.RrM}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="contenedor" *ngIf= "mostrarTabla">
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.NumeroM }}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.CodigoM }}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.CodigoLote}}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.Tarifa}}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.Hilos}}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.Rpu}}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.Folio }}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.KhM}}</p>
+            </div>
+            <div class ="propiedad">
+                <h6>Numero de Medidor</h6>
+                <p>{{registroEncontrado.RrM}}</p>
+            </div>
+        </div>
     </div>
 </body>
-
-
-
