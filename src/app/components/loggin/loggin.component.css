@@ -67,14 +67,14 @@ background{
   position: relative;
   margin-bottom: 10px;
   font-size: 18px;
-  width: 80%;
+  width: 100%; /* Cambia el valor de width al 100% para que ocupe el ancho del contenedor */
 }
 
 .input-container input {
-  font-family: sans-serif; /* Cambia 'Font Elegante' por la fuente que desees */
-  font-size: 18px; /* Tamaño de fuente de los campos de entrada */
-  padding-left: 30px; /* Espacio para el ícono */
-  width: 800%;
+  font-family: sans-serif;
+  font-size: 18px;
+  padding-left: 30px;
+  width: 100%; /* Cambia el valor de width al 100% para que ocupe el ancho del contenedor */
   height: 40px;
   border: none;
   border-radius: 3px;
