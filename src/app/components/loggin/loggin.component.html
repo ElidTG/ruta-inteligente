@@ -2,7 +2,7 @@
 <!doctype html>
 <!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
 <html lang="es">
-    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <head>
         
         <meta charset="utf-8">
@@ -39,13 +39,13 @@
                     <form>
                         <div class="form-group">
                           <div class="input-container">
-                            <i class="fa fa-user input-icon"></i>
+                            <i class="fas fa-user input-icon"></i>
                             <input type="text" [(ngModel)]="usuario.Correo" name="Correo" placeholder="Usuario" required class="form-control">
                           </div>
                         </div>
                         <div class="form-group">
                           <div class="input-container">
-                            <i class="fa fa-lock input-icon"></i>
+                            <i class="fas fa-lock input-icon"></i>
                             <input type="password" [(ngModel)]="usuario.Password" name="Password" placeholder="Contraseña" required class="form-control">
                           </div>
                         </div>
