@@ -176,7 +176,15 @@
     border-radius: 3px;
     background-color: #c2fabb;
   }
-  
+  /* Estilos para los iconos */
+.input-icon {
+  position: absolute;
+  font-size: 18px; /* Tamaño de fuente de los íconos */
+  left: 15px; /* Espacio desde el borde izquierdo */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%);
+  color: #1b262c; /* Color de los íconos */
+}
   /* Estilos para centrar el contenedor de inicio de sesión */
   #contenedor {
     display: flex;
