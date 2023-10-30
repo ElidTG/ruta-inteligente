@@ -206,6 +206,7 @@
   /* Responsividad para los campos de entrada */
   @media (max-width: 767px) {
     .input-container input {
+      width: 30%;
       font-size: 14px;
     }
   }

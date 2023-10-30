@@ -19,7 +19,7 @@ export class TablaRegistroComponent {
     Folio: '',
     KhM:'',
     RrM:'',
-    Ruta: this.Ruta,
+    Ruta: localStorage.getItem("Ruta") || '',
   };
 
 
@@ -48,7 +48,7 @@ agregarRegistro() {
       Folio: '',
       KhM: '',
       RrM: '',
-      Ruta: this.Ruta,
+      Ruta:localStorage.getItem("Ruta") || '',
     };
     // Opcional: Recarga los datos de la tabla
     this.obtenerRegistro();
