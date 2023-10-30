@@ -42,12 +42,14 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-.codigoM{
-    width: 10%;
-}
+
 @media (min-width: 300px) and (max-width: 600px) {
     .filacolumna{
         display: none;
         
+    }
+    .mostrar{
+        width: 10%;
+        font-size: 12px;
     }
   }

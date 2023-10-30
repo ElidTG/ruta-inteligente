@@ -21,7 +21,7 @@ export class TablaBuscarComponent {
 }
   buscarRegistro(rpu: string) {
     this.tablaService.obtenerRegistroPorId(rpu)
-    .pipe(
+    .pipe(  
       catchError((error) => {
         // Manejo de errores
         console.error('Error al buscar registro:', error);
