@@ -56,7 +56,7 @@ agregarRegistro() {
   });
   }
 obtenerRegistro(){
-  this.tablaService.obtenerRegistros(this.Ruta).subscribe((response: any) => {
+  this.tablaService.obtenerRegistros(localStorage.getItem("Ruta") || '').subscribe((response: any) => {
     if (response.ok) {
       this.registros = response.registros.reverse();
       console.log (this.registros);

@@ -37,7 +37,7 @@ export class TablaBuscarComponent {
     });
   }
   obtenerRegistro(){
-    this.tablaService.obtenerRegistros(this.Ruta).subscribe((response: any) => {
+    this.tablaService.obtenerRegistros(localStorage.getItem("Ruta") || '').subscribe((response: any) => {
       if (response.ok) {
         this.registros = response.registros;
         console.log (this.registros);
