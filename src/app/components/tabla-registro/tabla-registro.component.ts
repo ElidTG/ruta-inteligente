@@ -19,6 +19,7 @@ export class TablaRegistroComponent {
     Folio: '',
     KhM:'',
     RrM:'',
+    Ruta: this.Ruta,
   };
 
 
@@ -47,6 +48,7 @@ agregarRegistro() {
       Folio: '',
       KhM: '',
       RrM: '',
+      Ruta: this.Ruta,
     };
     // Opcional: Recarga los datos de la tabla
     this.obtenerRegistro();
@@ -54,7 +56,7 @@ agregarRegistro() {
   });
   }
 obtenerRegistro(){
-  this.tablaService.obtenerRegistros().subscribe((response: any) => {
+  this.tablaService.obtenerRegistros(this.Ruta).subscribe((response: any) => {
     if (response.ok) {
       this.registros = response.registros.reverse();
       console.log (this.registros);

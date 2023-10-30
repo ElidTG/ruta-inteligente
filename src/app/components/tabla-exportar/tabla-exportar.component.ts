@@ -10,6 +10,7 @@ import * as XLSX from 'xlsx';
 export class TablaExportarComponent {
   registroEncontrado: any = null; 
   registros: any[] = [];
+  ruta = localStorage.getItem("Ruta") || '';
 
   constructor(private tablaService: TablaService) {}
   ngOnInit(): void {
@@ -17,8 +18,8 @@ export class TablaExportarComponent {
     // Puedes hacerlo en un método cuando se dispare un evento, por ejemplo, en el evento de envío de formulario.
     this.obtenerRegistro();
   }
-  obtenerRegistro(){
-    this.tablaService.obtenerRegistros().subscribe((response: any) => {
+  obtenerRegistro() {
+    this.tablaService.obtenerRegistros(this.ruta).subscribe((response: any) => {
       if (response.ok) {
         this.registros = response.registros;
         console.log (this.registros);
@@ -33,6 +34,7 @@ export class TablaExportarComponent {
 
   exportExcel(){
 /** Passing table id*/
+
 let data = document.getElementById("table-data");
 const ws:XLSX.WorkSheet = XLSX.utils.table_to_sheet(data);
 

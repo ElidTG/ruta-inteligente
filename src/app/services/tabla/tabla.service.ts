@@ -17,8 +17,8 @@ export class TablaService {
     );
   }
   // Obtener todos los registros
-  obtenerRegistros(): Observable<any> {
-    return this.http.get(`${this.api}/buscartabla`).pipe(
+  obtenerRegistros(ruta: string): Observable<any> {
+    return this.http.get(`${this.api}/buscartabla/${ruta}`).pipe(
       catchError(this.handleError)
     );
   }
