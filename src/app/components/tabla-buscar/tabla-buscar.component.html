@@ -51,28 +51,28 @@
         <h2>Registros</h2>
         <thead>
             <tr style= "font-size: small;">
-                <th>Numero Medidor</th>
-                <th>Códogo de Medidor</th>
-                <th>Código de Lote</th>
-                <th>Tarifa</th>
-                <th>Hilos</th>
+                <th >Numero Medidor</th>
+                <th class = "Nomostrar">Códogo de Medidor</th>
+                <th class = "Nomostrar">Código de Lote</th>
+                <th class = "Nomostrar">Tarifa</th>
+                <th class = "Nomostrar">Hilos</th>
                 <th>RPU</th>
                 <th>Folio</th>
-                <th>khM</th>
-                <th>RrM</th>
+                <th class = "Nomostrar">khM</th>
+                <th class = "Nomostrar">RrM</th>
             </tr>
         </thead>
         <tbody id="tableBody">
             <tr *ngFor="let registro of registros"> 
                 <td>{{registro.NumeroM }}</td>
-                <td>{{registro.CodigoM }}</td>
-                <td>{{registro.CodigoLote}}</td>
-                <td>{{registro.Tarifa}}</td>
-                <td>{{registro.Hilos}}</td>
+                <td class = "Nomostrar">{{registro.CodigoM }}</td>
+                <td class = "Nomostrar">{{registro.CodigoLote}}</td>
+                <td class = "Nomostrar">{{registro.Tarifa}}</td>
+                <td class = "Nomostrar">{{registro.Hilos}}</td>
                 <td>{{registro.Rpu}}</td>
                 <td>{{registro.Folio }}</td>
-                <td>{{registro.KhM}}</td>
-                <td>{{registro.RrM}}</td>
+                <td class = "Nomostrar">{{registro.KhM}}</td>
+                <td class = "Nomostrar">{{registro.RrM}}</td>
             </tr>
         </tbody>
     </div>
