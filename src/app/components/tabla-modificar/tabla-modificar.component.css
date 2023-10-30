@@ -1,71 +1,91 @@
 /* Estilos para la tabla de modificación */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.contenedor{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.propiedad{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 2px solid rgba(51,150,60);
+}
+.propiedad h6{
+  width:100%;
+  font-size:20px;
+  background-color: rgb(51, 136, 57);
+  color: whitesmoke;
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.propiedad p{
+  margin-top: 10px ;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Estilos para la tabla en la vista vertical */
+@media (min-width: 300px) and (max-width: 600px) {
+  .propiedad p{
+    font-size: 14px;
   }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .propiedad h6{
+    font-size:16px;
   }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Estilos para la fila del registro modificado */
-  tr.registro-modificado {
-    background-color: #e6ffe6; /* Color de fondo para la fila modificada */
-  }
-  
+}
