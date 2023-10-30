@@ -19,6 +19,7 @@ export class TablaModificarComponent implements OnInit {
     Folio: '',
     KhM: '',
     RrM: '',
+    Ruta: '',
   }; 
   registros: any[] = [];
   Ruta = ''
@@ -71,6 +72,7 @@ export class TablaModificarComponent implements OnInit {
         Folio: '',
         KhM: '',
         RrM: '',
+        Ruta: this.Ruta,
       };
       // Opcional: Recarga los datos de la tabla
       this.obtenerRegistro();
@@ -93,7 +95,7 @@ export class TablaModificarComponent implements OnInit {
     // Maneja el caso en que id es nulo
   }
   obtenerRegistro(){
-    this.tablaService.obtenerRegistros().subscribe((response: any) => {
+    this.tablaService.obtenerRegistros(this.Ruta).subscribe((response: any) => {
       if (response.ok) {
         this.registros = response.registros;
         console.log (this.registros);

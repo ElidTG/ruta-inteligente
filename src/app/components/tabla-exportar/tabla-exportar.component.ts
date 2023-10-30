@@ -10,7 +10,7 @@ import * as XLSX from 'xlsx';
 export class TablaExportarComponent {
   registroEncontrado: any = null; 
   registros: any[] = [];
-  ruta = localStorage.getItem("Ruta") || '';
+  Ruta = localStorage.getItem("Ruta") || '';
 
   constructor(private tablaService: TablaService) {}
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class TablaExportarComponent {
     this.obtenerRegistro();
   }
   obtenerRegistro() {
-    this.tablaService.obtenerRegistros(this.ruta).subscribe((response: any) => {
+    this.tablaService.obtenerRegistros(this.Ruta).subscribe((response: any) => {
       if (response.ok) {
         this.registros = response.registros;
         console.log (this.registros);
