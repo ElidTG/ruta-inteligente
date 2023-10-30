@@ -5,6 +5,7 @@
   justify-content: center;
   min-height: 100vh;
   background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  margin: 0 auto;
 }
 
 #central {
@@ -27,6 +28,7 @@
 @media (min-width: 300px) and (max-width: 600px) {
   #contenedor {
     padding: 40px 0;
+    background: url("../../../assets/images/iconoCfe.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
   }
 
   #central {
@@ -47,10 +49,6 @@
   .btn-login {
     font-size: 18px;
   }
-background{
-  width: 90%;
-  background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
-}
 }
 
 /* Estilos para los iconos */
@@ -93,3 +91,4 @@ background{
   font-size: 16px;
   cursor: pointer;
 }
+
