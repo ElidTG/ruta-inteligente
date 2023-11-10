@@ -2,7 +2,6 @@ import { Component,ViewChild, ElementRef  } from '@angular/core';
 import { TablaService } from '../../services/tabla/tabla.service';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
-import 'bootstrap/dist/css/bootstrap.min.css';
 @Component({
   selector: 'app-tabla-registro',
   templateUrl: './tabla-registro.component.html',
