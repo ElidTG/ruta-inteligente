@@ -1,4 +1,5 @@
 /* Agrega Bootstrap a tu archivo de estilos global */
+
 @import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
 /* Estilo personalizado para la tabla */
 h1 {

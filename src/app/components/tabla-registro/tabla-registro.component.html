@@ -3,47 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
+    <title>Ruta Inteligente</title>
     <link rel="stylesheet" href="tabla-registro.component.css">
-    <!--<script src="addregistro.js"></script>
-    <script src="getregistro.js"></script> 
-     <meta http-equiv="Content-Security-Policy" content= "default-src example.com:*; font-src 'self' data:; img-src 'self' data:; default-src 'self' http://localhost:3000/"> 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: http://localhost:3000/;"> -->
-</head>
+    </head>
 <body>
-   <!-- <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="login.html">Login</a></li>
-          Agrega más elementos del menú según sea necesario 
-        </ul>
-      </nav> -->
     <div class="container">
         <h1>RUTA: {{Ruta}}</h1>
         <form (ngSubmit)="agregarRegistro()" #registroForm="ngForm">
-            <div ngModelGroup="registro">            
+            <div class="form-group">            
                 <label for="numeromedidor">Numero Medidor:</label>
                 <input type="text" id="numeromedidor" name="numeromedidor" required [(ngModel)]="registro.NumeroM">
+            </div>
+            <div class="form-group">
                 <label for="codigomedidor">Código de medidor:</label>
                 <input type="text" id="codigomedidor" name="codigomedidor" required [(ngModel)]="registro.CodigoM">
+            </div>
+            <div class="form-group">
                 <label for="codigolote">Código de lote:</label>
                 <input type="text" id="codigolote" name="codigolote" required [(ngModel)]="registro.CodigoLote">
+            </div>
+            <div class="form-group">    
                 <label for="tarifa">Tarifa:</label>
                 <input type="text" id="tarifa" name="tarifa" required [(ngModel)]="registro.Tarifa">
+            </div>
+            <div class="form-group">    
                 <label for="hilos">Fases/Hilos:</label>
                 <input type="text" id="hilos" name="hilos" required [(ngModel)]="registro.Hilos">
+            </div>
+            <div class="form-group">
                 <label for="rpu">RPU:</label>
                 <input type="text" id="rpu" name="rpu" required [(ngModel)]="registro.Rpu">
+            </div>
+            <div class="form-group">    
                 <label for="folio">Folio:</label>
                 <input type="text" id="folio" name="folio" required [(ngModel)]="registro.Folio"> <!--&nbsp;&nbsp;&nbsp;  -->
+            </div>
+            <div class="form-group">
                 <label for="rpu">Kh Medidor:</label>
                 <input type="text" id="khmedidor" name="khmedidor" required [(ngModel)]="registro.KhM">
+            </div>
+            <div class="form-group">    
                 <label for="rpu">Rr Medidor:</label>
                 <input type="text" id="rrmedidor" name="rrmedidor" required [(ngModel)]="registro.RrM">
             </div>
-            <button align="center" type="submit" [disabled]="!registroForm.form.valid">Añadir</button>
+            <button align="center" type="submit" [disabled]="!registroForm.form.valid" class="btn btn-primary">Añadir</button>
         </form>
-        <table>
+        <table  class="table">
             <thead>
                 <tr>
                     <th >Numero Medidor</th>
@@ -70,7 +75,6 @@
                         <td class = "filacolumna">{{registro.RrM}}</td>
                     </tr>
                 </tbody>
-            
         </table>
     </div>
 </body>
