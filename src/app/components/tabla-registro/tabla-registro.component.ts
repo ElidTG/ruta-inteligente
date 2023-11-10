@@ -58,7 +58,7 @@ agregarRegistro() {
     }
   });
 } else {
-  alert('Por favor, complete todos los campos.');
+  alertaLlenar('Por favor, complete todos los campos.');
 }
 }
 obtenerRegistro(){
@@ -86,3 +86,18 @@ showConfirmButton : false,
 timer : 1500
 });
 }
+
+function alertaLlenar (message : string){
+  Swal.fire({
+  text: message,
+  width : 'auto',
+  icon : 'error',
+  iconColor : '#090c9b',
+  background : 'white',
+  padding : '0px 0px 20px 0px',
+  color : 'black',
+  buttonsStyling : false,
+  showConfirmButton : false,
+  timer : 1300
+  });
+  }
