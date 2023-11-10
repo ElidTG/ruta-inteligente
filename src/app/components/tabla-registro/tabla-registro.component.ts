@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild, ElementRef  } from '@angular/core';
 import { TablaService } from '../../services/tabla/tabla.service';
+import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-tabla-registro',
@@ -7,6 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./tabla-registro.component.css']
 })
 export class TablaRegistroComponent {
+  @ViewChild('registroForm') registroForm!: NgForm; // Activa el formulario
   registros: any[] = [];
   Ruta = ''
   registro = {
@@ -33,6 +35,7 @@ ngOnInit(): void {
 }
 
 agregarRegistro() {
+  if (this.registroForm.form.valid) {
   this.tablaService.agregarRegistro(this.registro).subscribe((response: any) => {
     if (response.ok) {
       alertaOk('Registro agregado con éxito.');
@@ -54,7 +57,10 @@ agregarRegistro() {
     this.obtenerRegistro();
     }
   });
-  }
+} else {
+  alert('Por favor, complete todos los campos.');
+}
+}
 obtenerRegistro(){
   this.tablaService.obtenerRegistros(localStorage.getItem("Ruta") || '').subscribe((response: any) => {
     if (response.ok) {
