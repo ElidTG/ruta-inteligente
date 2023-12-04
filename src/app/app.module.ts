@@ -12,6 +12,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { LogginComponent } from './components/loggin/loggin.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CamaraRegistroComponent } from './components/camara-registro/camara-registro.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     TablaModificarComponent,
     TablaExportarComponent,
     MenuComponent,
-    LogginComponent
+    LogginComponent,
+    CamaraRegistroComponent
   ],
   imports: [
     BrowserModule,

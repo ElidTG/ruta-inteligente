@@ -5,6 +5,7 @@ import { TablaBuscarComponent } from './components/tabla-buscar/tabla-buscar.com
 import { TablaModificarComponent } from './components/tabla-modificar/tabla-modificar.component';
 import { TablaExportarComponent } from './components/tabla-exportar/tabla-exportar.component';
 import { LogginComponent } from './components/loggin/loggin.component';
+import { CamaraRegistroComponent } from './components/camara-registro/camara-registro.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'exportar', component: TablaExportarComponent
+  },
+  {
+    path: 'capturar', component: CamaraRegistroComponent
   },
   {
     path: 'iniciosesion',component: LogginComponent
