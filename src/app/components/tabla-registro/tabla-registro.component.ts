@@ -39,7 +39,6 @@ agregarRegistro() {
   this.tablaService.agregarRegistro(this.registro).subscribe((response: any) => {
     if (response.ok) {
       alertaOk('Registro agregado con éxito.');
-      // Puedes hacer algo aquí después de agregar el registro, como limpiar el formulario o recargar los datos de la tabla.
     // Limpia los campos del formulario
     this.registro = {
       NumeroM: '',
@@ -53,7 +52,7 @@ agregarRegistro() {
       RrM: '',
       Ruta:localStorage.getItem("Ruta") || '',
     };
-    // Opcional: Recarga los datos de la tabla
+    // Recarga los datos de la tabla
     this.obtenerRegistro();
     }
   });

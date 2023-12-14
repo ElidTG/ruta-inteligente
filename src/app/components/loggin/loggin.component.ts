@@ -18,20 +18,20 @@ constructor(private servicio: LogginService, private router: Router) {}
 
 ngOnInit(): void {
     // No realices la solicitud de inicio de sesión en el constructor
-    // Puedes hacerlo en un método cuando se dispare un evento, por ejemplo, en el evento de envío de formulario.
+    
 }
 
 login() {
-    // Llama a este método cuando se envíe el formulario
+    // Llama a este método cuando se envía el formulario
     this.servicio.login(this.usuario.Correo, this.usuario.Password).subscribe(
         (data: any) => {
           alertaOk('Inicio exitoso');
-            // Aquí puedes manejar la respuesta del servidor
+            // respuesta del servidor
             console.log('Respuesta del servidor:', data);
             localStorage.setItem("Ruta", data.Ruta);
             localStorage.setItem('loggin', 'logeado');
             Swal.fire('Inicio de sesión', 'Inicio de sesión exitoso', 'success');
-            // Redirige o realiza otras acciones según la respuesta
+            // Realiza otras acciones según la respuesta
             setTimeout(() => {
               this.router.navigate(['/registro']).then(() => {
                 window.location.reload();
@@ -39,12 +39,11 @@ login() {
             }, 1500);
         },
         (error: any) => {
-            // Manejar errores aquí
+            // Manejar errores
             console.error('Error:', error);
             Swal.fire('Error', 'Error al iniciar sesión', 'error');
         }
     );
-
 }
   
 }
