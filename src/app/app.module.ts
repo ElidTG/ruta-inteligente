@@ -13,7 +13,7 @@ import { LogginComponent } from './components/loggin/loggin.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CamaraRegistroComponent } from './components/camara-registro/camara-registro.component';
-
+import { WebcamModule } from 'ngx-webcam';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +23,10 @@ import { CamaraRegistroComponent } from './components/camara-registro/camara-reg
     TablaExportarComponent,
     MenuComponent,
     LogginComponent,
-    CamaraRegistroComponent
+    CamaraRegistroComponent,
   ],
   imports: [
+    WebcamModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -36,6 +37,9 @@ import { CamaraRegistroComponent } from './components/camara-registro/camara-reg
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
+  ],
+  exports:[
+      
   ],
   providers: [],
   bootstrap: [AppComponent]
