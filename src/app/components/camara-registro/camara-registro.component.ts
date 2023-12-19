@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { WebcamComponent} from 'ngx-webcam'; // WebcamImage
 import { Observable, Subject } from 'rxjs';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
-import Quagga from 'quagga'; // ES6
-const Quagga = require('quagga').default; // Common JS (important: default)
+import * as Quagga from 'quagga';
+
 
 @Component({
   selector: 'app-camara-registro',
