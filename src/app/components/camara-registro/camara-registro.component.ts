@@ -19,7 +19,26 @@ export class CamaraRegistroComponent {
 
   sysImage = '';
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Configurar Quagga
+  Quagga.init({
+    inputStream: {
+      name: "Live",
+      type: "LiveStream",
+      target: document.querySelector('#results'),
+    },
+    decoder: {
+      readers: ['code_128_reader', 'ean_reader'],
+    },
+  }, (err: any) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    // Inicializar Quagga después de configurarlo
+    Quagga.start();
+  });
+  }
 
   public getSnapshot(): void {
     this.trigger.next(void 0);
