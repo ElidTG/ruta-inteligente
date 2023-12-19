@@ -28,8 +28,9 @@ export class CamaraRegistroComponent {
   public captureImg(webcamImage: WebcamImage): void {
     this.webcamImage = webcamImage;
     this.sysImage = webcamImage!.imageAsDataUrl;
-    console.info('got webcam image', this.sysImage);
-
+    console.info('Imagen tomada', this.sysImage);
+    //Verificar si Quagga esta Listo.
+    if (Quagga) {
     // Utilizar Quagga para leer el código de barras desde la imagen
     Quagga.decodeSingle(
       {
@@ -53,6 +54,9 @@ export class CamaraRegistroComponent {
         }
       }
     );
+  }else{
+    console.error('Quagga no está disponible o no se ha inicializado correctamente.');
+  }
   }
 
   public get invokeObservable(): Observable<any> {
