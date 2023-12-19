@@ -22,11 +22,11 @@ export class CamaraRegistroComponent {
 
   ngOnInit() {
     // Configurar Quagga
-  Quagga.init({
+  /**Quagga.init({
     inputStream: {
       name: "Live",
       type: "LiveStream",
-      //target: document.querySelector('#barcode-scanner'),
+      target: document.querySelector('#barcode-scanner'),
     },
     decoder: {
       readers: ['code_128_reader', 'ean_reader','ean_8_reader','code_39_reader','code_39_vin_reader','codabar_reader','upc_reader','upc_e_reader'],
@@ -36,7 +36,7 @@ export class CamaraRegistroComponent {
         // Inicializar Quagga después de configurarlo
     Quagga.initialized = true;
     Quagga.start();
-  });
+  });**/
   }
 
   public getSnapshot(): void {
