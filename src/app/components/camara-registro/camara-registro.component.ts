@@ -18,6 +18,7 @@ export class CamaraRegistroComponent {
   private nextWebcam: Subject<any> = new Subject();
 
   sysImage = '';
+  capturedCode: string = '';
 
   ngOnInit() {
     // Configurar Quagga
@@ -65,8 +66,9 @@ export class CamaraRegistroComponent {
       },
       (result: { codeResult: { code: any } }) => {
         if (result?.codeResult) {
-          // Aquí puedes procesar el resultado del código de barras
-          console.log('Código de barras detectado:', result.codeResult.code);
+          // Actualizar la variable capturedCode con el código detectado
+          this.capturedCode = result.codeResult.code;
+          console.log('Código de barras detectado:', this.capturedCode);
           // También puedes enviar el resultado a tu backend mediante un servicio HTTP
         } else {
           console.error('No se pudo leer el código de barras.');
