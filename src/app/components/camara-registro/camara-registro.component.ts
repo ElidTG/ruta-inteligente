@@ -53,18 +53,18 @@ export class CamaraRegistroComponent {
     Quagga.decodeSingle(
       {
         src: webcamImage.imageAsDataUrl,
-        numOfWorkers: 0, // Desactivar el uso de workers para evitar problemas con Angular
+        numOfWorkers: 0,
         locate: true,
         inputStream: {
           size: 640,
         },
         decoder: {
-          readers: ['code_128_reader', 'ean_reader'], // Configuración de los lectores de códigos de barras
+          readers: ['code_128_reader', 'ean_reader'],
         },
       },
       (result: { codeResult: { code: any } }) => {
+        console.log('Resultado de la decodificación:', result);  // Agrega esta línea
         if (result?.codeResult) {
-          // Actualizar la variable capturedCode con el código detectado
           this.capturedCode = result.codeResult.code;
           console.log('Código de barras detectado:', this.capturedCode);
           // También puedes enviar el resultado a tu backend mediante un servicio HTTP

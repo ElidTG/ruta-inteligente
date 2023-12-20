@@ -7,3 +7,7 @@
   width: 100%;
   height: auto;
 }
+
+.btn btn-danger{
+  text-align: center;
+}
