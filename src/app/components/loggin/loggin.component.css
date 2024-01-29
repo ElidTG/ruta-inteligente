@@ -4,7 +4,9 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url("../../../assets/images/CFE_logo.png") center cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  background-color: green;
+  /*background: url("../../../assets/images/CFE_logo.png") center cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  */
   margin: 0 auto;
 }
 
@@ -29,9 +31,8 @@
   #contenedor {
     padding: 40px 0;
     background: url("../../../assets/images/cfeloggin00.png"), linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Fija la imagen de fondo */
+    background-size:contain;
+    background-repeat:no-repeat;
   }
   #central {
     padding: 10px;
