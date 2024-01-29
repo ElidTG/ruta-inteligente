@@ -23,7 +23,7 @@ export class TablaRegistroComponent {
     RrM:'',
     Ruta: localStorage.getItem("Ruta") || '',
     Latitud: 0,
-  Longitud: 0,
+    Longitud: 0,
   };
 
 
