@@ -22,6 +22,8 @@ export class TablaRegistroComponent {
     KhM:'',
     RrM:'',
     Ruta: localStorage.getItem("Ruta") || '',
+    Latitud: 0,
+  Longitud: 0,
   };
 
 
@@ -36,6 +38,14 @@ ngOnInit(): void {
 
 agregarRegistro() {
   if (this.registroForm.form.valid) {
+      // Obtener las coordenadas utilizando la API de geolocalización
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            // Almacena las coordenadas en el objeto de registro
+            this.registro.Latitud = position.coords.latitude;
+            this.registro.Longitud = position.coords.longitude;
+
   this.tablaService.agregarRegistro(this.registro).subscribe((response: any) => {
     if (response.ok) {
       alertaOk('Registro agregado con éxito.');
@@ -51,11 +61,22 @@ agregarRegistro() {
       KhM: '',
       RrM: '',
       Ruta:localStorage.getItem("Ruta") || '',
+      Latitud: 0, 
+      Longitud: 0,
     };
     // Recarga los datos de la tabla
     this.obtenerRegistro();
     }
   });
+},
+    (error) => {
+    console.error('Error al obtener la ubicación:', error);
+    alertaLlenar('Error al obtener la ubicación. Registro no agregado.');
+  }
+);
+} else {
+alertaLlenar('Tu navegador no admite la geolocalización. Registro no agregado.');
+}
 } else {
   alertaLlenar('Por favor, complete todos los campos.');
 }
