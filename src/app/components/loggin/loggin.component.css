@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  background: url("../../../assets/images/CFE_logo.png") center cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
   margin: 0 auto;
 }
 
@@ -25,15 +25,17 @@
 }
 
 /* Estilos para dispositivos medianos (entre 576px y 767.98px) */
-@media (min-width: 300px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   #contenedor {
     padding: 40px 0;
-    background: url("../../../assets/images/CFE_logo.png") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
-    background-size: cover; /* O también puedes usar 'contain' según tus necesidades */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional, mantiene la imagen fija en lugar de hacer scroll con el contenido */
+    background: url("../../../assets/images/cfeloggin3.svg") center center/cover no-repeat, linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+  }
+/* Estilo para pantallas más grandes */
+@media screen and (min-width: 769px) {
+  body {
+    background-image: url('../../../assets/images/cfeloggin.jpg');
+  }
 }
-
   #central {
     padding: 10px;
   }
