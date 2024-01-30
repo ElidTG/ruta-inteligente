@@ -44,7 +44,16 @@ body {
     background: url("../../../assets/images/cfeloggin00.png");
     background-size:cover;
     background-repeat:repeat-y;
-
+    
+  }
+  .imagen-arriba {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 60%; /* Ajusta el ancho máximo según sea necesario */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
   }
   #central {
     padding: 10px;
