@@ -52,6 +52,7 @@ body {
     background-repeat:repeat-y;
   }
   .imagen-arriba {
+    display:ruby-base-container;
     position: absolute;
     top: 0;
     left: 50%;
