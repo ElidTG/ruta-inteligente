@@ -40,6 +40,11 @@ agregarRegistro() {
   if (this.registroForm.form.valid) {
       // Obtener las coordenadas utilizando la API de geolocalización
       if (navigator.geolocation) {
+        const options = {
+          enableHighAccuracy: true, // Habilita la alta precisión
+          timeout: 10000, // Tiempo máximo permitido para obtener la posición (en milisegundos)
+          maximumAge: 0 // Descarta la caché y obtiene una nueva posición
+        };
         navigator.geolocation.getCurrentPosition(
           (position) => {
             // Almacena las coordenadas en el objeto de registro
@@ -72,7 +77,8 @@ agregarRegistro() {
     (error) => {
     console.error('Error al obtener la ubicación:', error);
     alertaLlenar('Error al obtener la ubicación. Registro no agregado.');
-  }
+  },
+  options
 );
 } else {
 alertaLlenar('Tu navegador no admite la geolocalización. Registro no agregado.');
