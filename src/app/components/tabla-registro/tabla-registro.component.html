@@ -55,16 +55,6 @@
                 <br>
                 <input type="text" id="rrmedidor" name="rrmedidor" required [(ngModel)]="registro.RrM">
             </div>
-            <!--<div class="form-group">
-                <label for="latitud">Latitud:</label>
-                <br>
-                <input type="text" id="latitud" name="latitud" required [(ngModel)]="registro.Latitud">
-              </div>
-              <div class="form-group">
-                <label for="longitud">Longitud:</label>
-                <br>
-                <input type="text" id="longitud" name="longitud" required [(ngModel)]="registro.Longitud">
-              </div> -->
             <button align="center" type="submit" [disabled]="!registroForm.form.valid" class="btn btn-primary">Añadir</button>
         </form>
         <table  class="table">
@@ -81,6 +71,7 @@
                     <th class = "filacolumna">RrM</th>
                     <th class = "filacolumna">Latitud</th>
                     <th class = "filacolumna">Longitud</th>
+                    <th class = "filacolumna">Tiempo</th>
                 </tr>
             </thead>
                 <tbody id="tableBody">
@@ -96,6 +87,7 @@
                         <td class = "filacolumna">{{registro.RrM}}</td>
                         <td class = "filacolumna">{{registro.Latitud}}</td>
                         <td class = "filacolumna">{{registro.Longitud}}</td>
+                        <td class = "filacolumna">{{registro.Timestamp}}</td>
                     </tr>
                 </tbody>
         </table>

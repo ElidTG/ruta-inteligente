@@ -24,6 +24,7 @@ export class TablaRegistroComponent {
     Ruta: localStorage.getItem("Ruta") || '',
     Latitud: 0,
     Longitud: 0,
+    Timestamp: '',
   };
 
 
@@ -34,6 +35,7 @@ ngOnInit(): void {
     // Puedes hacerlo en un método cuando se dispare un evento, por ejemplo, en el evento de envío de formulario.
     this.obtenerRegistro();
     this.Ruta = localStorage.getItem('Ruta') || '';
+    
 }
 
 agregarRegistro() {
@@ -50,6 +52,8 @@ agregarRegistro() {
             // Almacena las coordenadas en el objeto de registro
             this.registro.Latitud = position.coords.latitude;
             this.registro.Longitud = position.coords.longitude;
+            // Agrega una marca de tiempo al registro
+          this.registro.Timestamp = new Date().toISOString();
 
   this.tablaService.agregarRegistro(this.registro).subscribe((response: any) => {
     if (response.ok) {
@@ -68,6 +72,7 @@ agregarRegistro() {
       Ruta:localStorage.getItem("Ruta") || '',
       Latitud: 0, 
       Longitud: 0,
+      Timestamp: '',
     };
     // Recarga los datos de la tabla
     this.obtenerRegistro();
