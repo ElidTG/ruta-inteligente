@@ -26,7 +26,9 @@ export class TablaRegistroComponent {
     Longitud: 0,
     Timestamp: '',
   };
-
+  // Define previousLat and this.previousLng variables
+  previousLat: number | null = null;
+  previousLng: number | null = null;
 
 constructor(private tablaService: TablaService) {}
 
@@ -37,6 +39,7 @@ ngOnInit(): void {
     this.Ruta = localStorage.getItem('Ruta') || '';
     
 }
+
 
 agregarRegistro() {
   if (this.registroForm.form.valid) {
@@ -49,9 +52,14 @@ agregarRegistro() {
         };
         navigator.geolocation.getCurrentPosition(
           (position) => {
+            // Verificar si las coordenadas son diferentes de las anteriores
+          if (position.coords.latitude !== this.previousLat || position.coords.longitude !== this.previousLng) {
             // Almacena las coordenadas en el objeto de registro
             this.registro.Latitud = position.coords.latitude;
             this.registro.Longitud = position.coords.longitude;
+           // Actualizar las coordenadas anteriores
+           this.previousLat = position.coords.latitude;
+           this.previousLng = position.coords.longitude;
             // Agrega una marca de tiempo al registro
           this.registro.Timestamp = new Date().toISOString();
 
@@ -78,6 +86,9 @@ agregarRegistro() {
     this.obtenerRegistro();
     }
   });
+} else {
+  console.log("Las coordenadas son iguales a las anteriores. No se agregará un nuevo registro.");
+}
 },
     (error) => {
     console.error('Error al obtener la ubicación:', error);
