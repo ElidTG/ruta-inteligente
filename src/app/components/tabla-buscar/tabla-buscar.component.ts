@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/operators';
 import { TablaService } from 'src/app/services/tabla/tabla.service';
 import Swal from 'sweetalert2';
@@ -11,6 +12,8 @@ export class TablaBuscarComponent {
   registroEncontrado: any = null; 
   registros: any[] = [];
   Ruta = ''
+  criterio: string = '';
+  buscarTipo: string = 'rpu'; // Default search type
   constructor(private tablaService: TablaService) {}
 
   ngOnInit(): void {
@@ -19,7 +22,7 @@ export class TablaBuscarComponent {
     this.obtenerRegistro();
     this.Ruta = localStorage.getItem('Ruta') || '';
 }
-  buscarRegistro(rpu: string) {
+  /* buscarRegistro(rpu: string) {
     this.tablaService.obtenerRegistroPorId(rpu)
     .pipe(  
       catchError((error) => {
@@ -35,7 +38,54 @@ export class TablaBuscarComponent {
         console.log(this.registroEncontrado);
       }
     });
+  }*/
+  buscarRegistro() {
+    if (this.criterio.trim() !== '') {
+      this.tablaService.buscarRegistro(this.criterio, this.buscarTipo).subscribe(
+        (data: any) => {
+          if (data.ok) {
+            this.registroEncontrado = data.registro;
+            console.log(this.registroEncontrado);
+          } else {
+            console.log('Registro no encontrado');
+            alertaFALSE('Registro no encontrado');
+            this.registroEncontrado = null; // Reset the found record
+          }
+        },
+        (error) => {
+          console.error('Error al buscar registro:', error);
+          alertaFALSE('Error al buscar registro. Por favor, inténtelo de nuevo más tarde.');
+        }
+      );
+    } else {
+      alertaFALSE('Por favor, introduzca un criterio de búsqueda válido.');
+    }
   }
+  /*buscarRegistro(criterio: string, buscarTipo: string) {
+    let searchObservable: Observable<any> | undefined;
+    if (buscarTipo === 'rpu') {
+        searchObservable = this.tablaService.obtenerRegistroPorId(criterio);
+    } else if (buscarTipo === 'numeroM') {
+        searchObservable = this.tablaService.obtenerRegistroPorNumeroM(criterio);
+    }
+
+    if (searchObservable) {
+        searchObservable.pipe(
+            catchError((error) => {
+                // Error handling
+                console.error('Error al buscar registro:', error);
+                alertaFALSE('Registro NO encontrado');
+                return [];
+            })
+        ).subscribe((data: any) => {
+            if (data.ok) {
+                this.registroEncontrado = data.registro;
+                console.log(this.registroEncontrado);
+            }
+        });
+    }
+}*/
+
   obtenerRegistro(){
     this.tablaService.obtenerRegistros(localStorage.getItem("Ruta") || '').subscribe((response: any) => {
       if (response.ok) {

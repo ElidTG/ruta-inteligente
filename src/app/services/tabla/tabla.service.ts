@@ -31,6 +31,24 @@ export class TablaService {
       catchError(this.handleError)
     );
   }
+//Obtener registro por NumeroM
+  obtenerRegistroPorNumeroM(numeroM: string): Observable<any> {
+    return this.http.get(`${this.api}/gettabla/${numeroM}`).pipe(
+        catchError(this.handleError)
+    );
+}
+buscarRegistro(criterio: string, buscarTipo: string): Observable<any> {
+  let endpoint = '';
+  if (buscarTipo === 'NumeroM') {
+    endpoint = `gettabla/${criterio}`;
+  } else if (buscarTipo === 'rpu') {
+    endpoint = `gettabla/${criterio}`;
+  }
+
+  return this.http.get(`${this.api}/${endpoint}`).pipe(
+    catchError(this.handleError)
+  );
+}
 
   // Actualizar un registro por ID
   actualizarRegistro(rpu: string, registro: any): Observable<any> {
