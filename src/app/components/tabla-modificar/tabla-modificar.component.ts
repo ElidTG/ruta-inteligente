@@ -23,7 +23,7 @@ export class TablaModificarComponent implements OnInit {
   }; 
   registros: any[] = [];
   Ruta = ''
-  rpubuscar = ''
+  numerombuscar = ''
   mostrarTabla = false
 
   constructor(
@@ -38,8 +38,8 @@ export class TablaModificarComponent implements OnInit {
     this.Ruta = localStorage.getItem('Ruta') || '';
   }
       // Utiliza el servicio para cargar el registro
-  buscarRegistro(rpu: string) {
-    this.tablaService.obtenerRegistroPorId(rpu)
+  buscarRegistro(NumeroM: string) {
+    this.tablaService.obtenerRegistroPorNumeroM(NumeroM)
     .pipe(
       catchError((error) => {
         // Manejo de errores
@@ -82,11 +82,11 @@ export class TablaModificarComponent implements OnInit {
   guardarCambios() {
     // Obtén el ID del registro a editar desde la ruta
     // Utiliza el servicio para guardar los cambios en el registro
-    this.tablaService.actualizarRegistro(this.rpubuscar, this.registroEncontrado).subscribe((response: any) => {
+    this.tablaService.actualizarRegistro(this.numerombuscar, this.registroEncontrado).subscribe((response: any) => {
       if (response.ok) {
         alertaOk('Registro actualizado con éxito.');
-        this.buscarRegistro(this.rpubuscar);
-        console.log('URL a la que se hace la solicitud PUT:', `https://ruta-inteligente-logica.onrender.com/actualizartabla/${this.rpubuscar}`);
+        this.buscarRegistro(this.numerombuscar);
+        console.log('URL a la que se hace la solicitud PUT:', `https://ruta-inteligente-logica.onrender.com/actualizartabla/${this.numerombuscar}`);
         this.mostrarTabla = true;
       }else{
         alertaFALSE('Registro No encontrado')

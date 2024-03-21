@@ -2,16 +2,16 @@
     <div class="container">
         <h1>RUTA: {{Ruta}}</h1>
         <h2>Buscar Registro</h2>
-        <!-- <form id="formBuscar" (ngSubmit)="buscarRegistro(rpu.value)">
-            <label for="rpu">RPU del Registro:</label>
-            <input type="text" id="rpu" required #rpu>
+         <form id="formBuscar" (ngSubmit)="buscarRegistro(NumeroM.value)">
+            <label for="NumeroM">Número de Medidor:</label>
+            <input type="text" id="NumeroM" required #NumeroM>
             <button type="submit">Buscar</button>
-        </form> -->
-        <form id="formBuscar" (ngSubmit)="buscarRegistro()">
-            <label for="criterio">Buscar por RPU o Número de Medidor:</label>
+        </form> 
+        <!--<form id="formBuscar" (ngSubmit)="buscarRegistro()">
+            <label for="criterio">Buscar por Número de Medidor:</label>
             <input type="text" id="criterio" required [(ngModel)]="criterio" name="criterio">
             <button type="submit">Buscar</button>
-          </form>
+          </form> -->
         <div class = "contenedor" *ngIf="registroEncontrado">
             <h2>Registro Encontrado</h2>
             <div class ="propiedad">
